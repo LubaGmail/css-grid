@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas: "title" "header" "content" "sidebar" "footer";
+  grid-gap: 10px;
+}
+
+.grid .title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+.grid .header {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: header;
+}
+
+.grid .content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: content;
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid .sidebar {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+  /* left and right */
+  -ms-grid-column-align: center;
+      justify-self: center;
+  /* up and down */
+  /* align-self: end; */
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.grid .footer {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: footer;
+}
+
+.grid div:nth-child(even) {
+  background-color: plum;
+}
+
+.grid div:nth-child(odd) {
+  background-color: greenyellow;
+}
+
+@media screen and (min-width: 736px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: ". title title . " ". header header ." ". content sidebar ." ". footer footer .";
+  }
+}
+/*# sourceMappingURL=main.css.map */
